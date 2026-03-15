@@ -9,7 +9,6 @@
     <style>
         body { font-family: 'Poppins', sans-serif; }
         .font-serif { font-family: 'Dancing Script', cursive; }
-        /* Style pour le cadeau une fois réservé */
         .reserved { filter: grayscale(1); opacity: 0.6; pointer-events: none; position: relative; }
         .reserved-badge { display: none; position: absolute; top: 1rem; left: 1rem; background: #374151; color: white; padding: 0.25rem 1rem; border-radius: 9999px; font-weight: bold; z-index: 10; }
         .reserved .reserved-badge { display: block; }
@@ -22,7 +21,7 @@
         <p class="text-gray-500 italic max-w-md mx-auto mb-8">Pour accueillir notre petit trésor dans la douceur... Merci de nous accompagner !</p>
         
         <a href="https://www.paypal.me/TomLudo4" target="_blank" class="inline-block bg-pink-300 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-pink-400 hover:scale-105 transition transform duration-200">
-             ✨ Participer à la Cagnotte ✨
+             ✨ Participer à la Cagnotte Globale ✨
         </a>
     </header>
 
@@ -59,25 +58,22 @@
                         <h3 class="text-lg font-semibold text-gray-800 mb-2">${gift.name}</h3>
                         <p class="text-pink-400 font-bold text-xl mb-6">${gift.price}</p>
                         <div class="mt-auto space-y-3">
-                            <a href="${gift.url}" target="_blank" class="block w-full py-2 bg-gray-50 text-gray-400 rounded-xl text-sm font-medium hover:bg-gray-100 transition">Voir le détail</a>
-                            <button onclick="reserver(${gift.id}, '${gift.name}')" class="block w-full py-3 bg-pink-100 text-pink-600 rounded-xl font-bold hover:bg-pink-200 transition">🎁 Réserver ce cadeau</button>
+                            <a href="${gift.url}" target="_blank" class="block w-full py-2 bg-gray-50 text-gray-400 rounded-xl text-sm font-medium hover:bg-gray-100 transition">Voir l'article</a>
+                            <button onclick="reserver(${gift.id}, '${gift.name}')" class="block w-full py-3 bg-pink-100 text-pink-600 rounded-xl font-bold hover:bg-pink-200 transition">🎁 Offrir ce cadeau</button>
                         </div>
                     </div>
                 </div>`;
         });
 
         function reserver(id, nom) {
-            // Effet visuel
+            // 1. Griser le cadeau visuellement
             document.getElementById('gift-' + id).classList.add('reserved');
             
-            // REMPLACE PAR TON VRAI EMAIL ICI
-            const email = "TON_EMAIL@gmail.com"; 
+            // 2. Alerte rapide pour prévenir l'invité
+            alert("Merci ! Vous allez être redirigé vers notre PayPal pour offrir : " + nom);
             
-            const subject = encodeURIComponent("Réservation de cadeau : " + nom);
-            const body = encodeURIComponent("Coucou ! Je souhaite vous offrir : " + nom + ".\n\nJe viens de le réserver sur votre site !");
-            
-            alert("Merci ! Ton application mail va s'ouvrir pour confirmer la réservation.");
-            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+            // 3. Ouvrir ton PayPal directement
+            window.open("https://www.paypal.me/TomLudo4", "_blank");
         }
     </script>
 </body>
