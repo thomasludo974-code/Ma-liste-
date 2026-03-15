@@ -20,8 +20,8 @@
         <h1 class="text-5xl font-serif text-pink-400 mb-4">La Liste d'Alexia et Thomas</h1>
         <p class="text-gray-500 italic max-w-md mx-auto mb-8">Pour accueillir notre petit trésor dans la douceur... Merci de nous accompagner !</p>
         
-        <a href="https://www.paypal.me/TomLudo4" target="_blank" class="inline-block bg-pink-300 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-pink-400 hover:scale-105 transition transform duration-200">
-             ✨ Participer à la Cagnotte Globale ✨
+        <a href="https://buy.stripe.com/00waEXfZr0ti0P39G34F200" target="_blank" class="inline-block bg-pink-400 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-pink-500 hover:scale-105 transition transform duration-200">
+             💳 Participer par Carte Bancaire
         </a>
     </header>
 
@@ -59,21 +59,21 @@
                         <p class="text-pink-400 font-bold text-xl mb-6">${gift.price}</p>
                         <div class="mt-auto space-y-3">
                             <a href="${gift.url}" target="_blank" class="block w-full py-2 bg-gray-50 text-gray-400 rounded-xl text-sm font-medium hover:bg-gray-100 transition">Voir l'article</a>
-                            <button onclick="reserver(${gift.id}, '${gift.name}')" class="block w-full py-3 bg-pink-100 text-pink-600 rounded-xl font-bold hover:bg-pink-200 transition">🎁 Offrir ce cadeau</button>
+                            <button onclick="reserver(${gift.id}, '${gift.name}')" class="block w-full py-3 bg-pink-100 text-pink-600 rounded-xl font-bold hover:bg-pink-200 transition">🎁 Offrir par Carte Bancaire</button>
                         </div>
                     </div>
                 </div>`;
         });
 
         function reserver(id, nom) {
-            // 1. Griser le cadeau visuellement
+            // 1. Grise le cadeau visuellement
             document.getElementById('gift-' + id).classList.add('reserved');
             
-            // 2. Alerte rapide pour prévenir l'invité
-            alert("Merci ! Vous allez être redirigé vers notre PayPal pour offrir : " + nom);
+            // 2. Ton lien Stripe intégré
+            const stripeURL = "https://buy.stripe.com/00waEXfZr0ti0P39G34F200";
             
-            // 3. Ouvrir ton PayPal directement
-            window.open("https://www.paypal.me/TomLudo4", "_blank");
+            alert("Merci ! Vous allez être redirigé vers Stripe pour payer par Carte : " + nom);
+            window.open(stripeURL, "_blank");
         }
     </script>
 </body>
