@@ -3,82 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Liste de Naissance</title>
+    <title>La Liste de Naissance d'Alexia</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #fdfaf7; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .card { transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); }
+        body { font-family: 'Poppins', sans-serif; }
+        .font-serif { font-family: 'Dancing+Script', cursive; }
     </style>
 </head>
-<body>
+<body class="bg-[#fdf8f5]">
 
-    <header class="text-center py-12 px-4">
-        <h1 class="text-4xl font-serif text-pink-300 mb-2">La Liste de Bébé</h1>
-        <p class="text-gray-600">Bienvenue sur notre liste ! Merci de nous aider à préparer l'arrivée du petit bout.</p>
+    <header class="text-center py-16 px-4 bg-white shadow-sm mb-10 border-b-2 border-pink-50">
+        <h1 class="text-5xl font-serif text-pink-400 mb-4">La Liste d'Alexia</h1>
+        <p class="text-gray-500 italic max-w-md mx-auto mb-8">Pour accueillir notre petit trésor dans la douceur... Merci de nous accompagner !</p>
+        
+        <a href="METS_TON_LIEN_ICI" target="_blank" class="inline-block bg-pink-300 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-pink-400 hover:scale-105 transition transform duration-200">
+             ✨ Participer à la Cagnotte ✨
+        </a>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 pb-20">
-        <div id="gift-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <main class="max-w-6xl mx-auto px-6 pb-20">
+        <div id="gift-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             </div>
     </main>
 
     <script>
-        // MODIFIE TES CADEAUX ICI
+        // DONNÉES RÉCUPÉRÉES DE MINIPOUCE
         const gifts = [
             {
-                name: "Poussette Trio",
-                price: "450€",
-                image: "https://images.unsplash.com/photo-1591084728795-1149f32d9866?auto=format&fit=crop&w=400",
-                url: "https://www.bebe9.com/poussette-trio.html"
+                name: "Poussette Valora Signature Sandstone",
+                price: "379.00€",
+                image: "https://static.minipouce.fr/img/card/external/b2/58/img_42a1f23a34.jpg",
+                url: "https://www.bebe9.com"
             },
             {
-                name: "Veilleuse Étoile",
-                price: "25€",
-                image: "https://images.unsplash.com/photo-1537678122133-3bc810ef85df?auto=format&fit=crop&w=400",
-                url: "https://www.amazon.fr/veilleuse-bebe"
+                name: "Siège auto i-Level Pro Signature",
+                price: "239.00€",
+                image: "https://static.minipouce.fr/img/card/external/ae/c5/img_810d736845.jpg",
+                url: "https://www.bebe9.com"
             },
             {
-                name: "Lot de Pyjamas Coton",
-                price: "30€",
-                image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=400",
-                url: "https://www.petit-bateau.fr"
+                name: "Porte Bébé ergonomique Dual Sand",
+                price: "44.99€",
+                image: "https://static.minipouce.fr/img/card/external/cd/e7/img_685bad43e9.jpg",
+                url: "https://www.bebe9.com"
+            },
+            {
+                name: "Lit Bébé K2 Blanc 120x60",
+                price: "147.00€",
+                image: "https://static.minipouce.fr/img/card/external/15/85/img_f532a68527.jpg",
+                url: "https://www.amazon.fr"
+            },
+            {
+                name: "Berceau Cododo Aurora 3 en 1",
+                price: "99.99€",
+                image: "https://static.minipouce.fr/img/card/external/55/31/img_48903a5fb7.jpg",
+                url: "https://www.lionelo.com"
+            },
+            {
+                name: "Stérilisateur Biberon Grownsy",
+                price: "56.85€",
+                image: "https://static.minipouce.fr/img/card/external/c3/2f/img_642db07759.jpg",
+                url: "https://www.amazon.fr"
+            },
+            {
+                name: "Babyphone Caméra ieGeek 1080P",
+                price: "79.98€",
+                image: "https://static.minipouce.fr/img/card/external/ab/d9/img_4d55ab3da6.jpg",
+                url: "https://www.iegeek.com"
+            },
+            {
+                name: "Balancelle MoMi KENANI ONYX",
+                price: "89.00€",
+                image: "https://static.minipouce.fr/img/card/external/13/8a/img_a7a22d6bba.jpg",
+                url: "https://www.momi.store"
+            },
+            {
+                name: "Tire-lait Électrique Momcozy M5",
+                price: "167.99€",
+                image: "https://static.minipouce.fr/img/card/external/17/95/img_52789e3f1e.jpg",
+                url: "https://www.momcozy.com"
+            },
+            {
+                name: "Tapis d'éveil Luna & Axel",
+                price: "72.90€",
+                image: "https://static.minipouce.fr/img/card/external/6b/4d/img_764d92d5ee.jpg",
+                url: "https://www.nattou.eu"
+            },
+            {
+                name: "Kit Baignoire Deluxe + Pied",
+                price: "99.99€",
+                image: "https://static.minipouce.fr/img/card/external/14/09/img_9b7a6f0bf3.jpg",
+                url: "https://www.bebe9.com"
             }
         ];
 
         const container = document.getElementById('gift-container');
-
         gifts.forEach(gift => {
-            const card = `
-                <div class="card bg-white rounded-2xl shadow-sm border border-pink-100 overflow-hidden">
-                    <img src="${gift.image}" alt="${gift.name}" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800">${gift.name}</h3>
-                        <p class="text-pink-400 font-bold mb-4">${gift.price}</p>
-                        
-                        <div class="flex flex-col gap-2">
-                            <a href="${gift.url}" target="_blank" class="text-center bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200 transition">
-                                Voir le produit
-                            </a>
-                            <button onclick="reserver('${gift.name}')" class="bg-pink-200 text-pink-800 py-2 rounded-lg font-medium hover:bg-pink-300 transition">
-                                Je l'offre !
-                            </button>
+            container.innerHTML += `
+                <div class="bg-white rounded-3xl shadow-md overflow-hidden border border-pink-50 flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-64">
+                        <img src="${gift.image}" class="w-full h-full object-contain p-4" alt="${gift.name}">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow text-center">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">${gift.name}</h3>
+                        <p class="text-pink-400 font-bold text-xl mb-6">${gift.price}</p>
+                        <div class="mt-auto space-y-3">
+                            <a href="${gift.url}" target="_blank" class="block w-full py-2 bg-gray-50 text-gray-400 rounded-xl text-sm font-medium hover:bg-gray-100 transition">Voir le détail</a>
+                            <button onclick="reserver('${gift.name}')" class="block w-full py-3 bg-pink-100 text-pink-600 rounded-xl font-bold hover:bg-pink-200 transition">🎁 Offrir ce cadeau</button>
                         </div>
                     </div>
-                </div>
-            `;
-            container.innerHTML += card;
+                </div>`;
         });
 
         function reserver(nom) {
-            const email = "ton-email@exemple.com"; // REMPLACE PAR TON EMAIL
-            const subject = encodeURIComponent(`Je souhaite offrir : ${nom}`);
-            const body = encodeURIComponent(`Bonjour, \n\nJe souhaite réserver le cadeau suivant sur votre liste : ${nom}. \n\nDites-moi si c'est toujours disponible !`);
-            
-            // Ouvre le client mail de l'invité
+            const email = "TON_EMAIL@gmail.com";
+            const subject = encodeURIComponent("Réservation de cadeau : " + nom);
+            const body = encodeURIComponent("Coucou ! Je souhaite vous offrir : " + nom + ". Dites-moi comment procéder !");
             window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
         }
     </script>
-
 </body>
 </html>
